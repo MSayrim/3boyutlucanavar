@@ -1,24 +1,19 @@
 package com.example.ucboyutlucanavar;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.ucboyutlucanavar.ImportantStuff.Adapter.ModelAdapter;
+import com.example.ucboyutlucanavar.ImportantStuff.Adapter.ImageAdapter;
 import com.example.ucboyutlucanavar.ImportantStuff.Adapter.Picture;
-import com.example.ucboyutlucanavar.ImportantStuff.Adapter.PictureAdapter;
 import com.example.ucboyutlucanavar.ImportantStuff.Models;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -34,9 +29,18 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = new Intent (  );
         Bundle content = getIntent ().getExtras ();
         Models thatModel = (Models)content.getSerializable ( "selected project" );
-        TextView asd = (TextView) findViewById ( R.id.modelNameDetail );
-        String result = thatModel.getPicture2 ();
-        asd.setText ( result );
+        TextView name = (TextView) findViewById ( R.id.modelNameDetail );
+        TextView catagory = (TextView) findViewById ( R.id.modelCatagoryDetail );
+        TextView size = (TextView) findViewById ( R.id.modelSizeDetail );
+        TextView price = (TextView) findViewById ( R.id.modelPriceDetail );
+
+        name.setText ( thatModel.getProductName () );
+        catagory.setText ( thatModel.getProductCatagory () );
+
+
+
+        size.setText ( thatModel.getProductSize ().toString () + "CM");
+        price.setText ( thatModel.getProductPrice ().toString () + "₺" );
 
         pics = new ArrayList<Picture>();
 
@@ -50,9 +54,9 @@ public class DetailActivity extends AppCompatActivity {
         pics.add (new Picture (  thatModel.getPicture9 () ));
 
 
-        listView = findViewById ( R.id.imageList );
-        PictureAdapter modelAdapter = new PictureAdapter (pics,getApplicationContext () );
+        ViewPager viewPager = findViewById ( R.id.picSlaty );
+        ImageAdapter adapter = new ImageAdapter (pics,this);
+        viewPager.setAdapter ( adapter );
 
-        listView.setAdapter ( modelAdapter );
     }
 }

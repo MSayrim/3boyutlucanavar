@@ -68,8 +68,9 @@ public class ModelAdapter extends BaseAdapter {
 
         valueView2.setText( currency.getProductCatagory () +" " );
 
-        valueView3.setText( currency.getProductPrice () +" "   );
+        valueView3.setText("Boyut :    " + currency.getProductSize () +"CM "   );
 
+        imageView.setScaleType ( ImageView.ScaleType.FIT_XY );
         String pic= "https://www.3boyutlucanavar.com/wp-content/uploads/2020/08/"+currency.getTumbnail ();
         Picasso.with ( context ).load ( pic).into ( imageView );
 
