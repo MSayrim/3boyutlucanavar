@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RestApiClient {
     private RestApi mRestApi;
 
+
     public RestApiClient(String restApiServiceUrl){
         OkHttpClient.Builder builder = new OkHttpClient.Builder ()
                 .readTimeout ( 30, TimeUnit.SECONDS )

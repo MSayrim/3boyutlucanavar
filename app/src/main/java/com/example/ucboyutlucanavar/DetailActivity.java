@@ -1,12 +1,11 @@
 package com.example.ucboyutlucanavar;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.ucboyutlucanavar.ImportantStuff.Adapter.ImageAdapter;
 import com.example.ucboyutlucanavar.ImportantStuff.Adapter.Picture;
@@ -17,8 +16,8 @@ import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
 
-    ListView listView;
     List<Picture> pics;
+    List<Models> respondeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,7 @@ public class DetailActivity extends AppCompatActivity {
         size.setText ( thatModel.getProductSize ().toString () + "CM");
         price.setText ( thatModel.getProductPrice ().toString () + "₺" );
 
-        pics = new ArrayList<Picture>();
+        pics = new ArrayList<Picture> ();
 
         pics.add (new Picture ( thatModel.getPicture2 ()) );
         pics.add ( new Picture ( thatModel.getPicture3 ()) );
@@ -52,6 +51,8 @@ public class DetailActivity extends AppCompatActivity {
         pics.add (new Picture (  thatModel.getPicture7 () ));
         pics.add (new Picture (  thatModel.getPicture8 () ));
         pics.add (new Picture (  thatModel.getPicture9 () ));
+
+
 
 
         ViewPager viewPager = findViewById ( R.id.picSlaty );

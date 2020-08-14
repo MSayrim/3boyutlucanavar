@@ -7,6 +7,8 @@ public class Models implements Serializable {
     private int sizeId;
     private String productName;
     private String productCatagory;
+
+    private String productCatagoryPic;
     private Integer productSize;
     private Integer productPrice;
     private String tumbnail;
@@ -19,11 +21,12 @@ public class Models implements Serializable {
     private String picture8;
     private String picture9;
 
-    public Models(int productId, int sizeId, String productName, String productCatagory, Integer productSize, Integer productPrice, String tumbnail, String picture2, String picture3, String picture4, String picture5, String picture6, String picture7, String picture8, String picture9) {
+    public Models(int productId, int sizeId, String productName, String productCatagory,String productCatagoryPic, Integer productSize, Integer productPrice, String tumbnail, String picture2, String picture3, String picture4, String picture5, String picture6, String picture7, String picture8, String picture9) {
         this.productId = productId;
         this.sizeId = sizeId;
         this.productName = productName;
         this.productCatagory = productCatagory;
+        this.productCatagoryPic = productCatagoryPic;
         this.productSize = productSize;
         this.productPrice = productPrice;
         this.tumbnail = tumbnail;
@@ -35,6 +38,14 @@ public class Models implements Serializable {
         this.picture7 = picture7;
         this.picture8 = picture8;
         this.picture9 = picture9;
+    }
+
+    public String getProductCatagoryPic() {
+        return productCatagoryPic;
+    }
+
+    public void setProductCatagoryPic(String productCatagoryPic) {
+        this.productCatagoryPic = productCatagoryPic;
     }
 
     public int getProductId() {

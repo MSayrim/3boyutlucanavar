@@ -1,28 +1,17 @@
 package com.example.ucboyutlucanavar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.JsonReader;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.ucboyutlucanavar.ImportantStuff.Adapter.ModelAdapter;
+import com.example.ucboyutlucanavar.ImportantStuff.Adapter.CategoryAdapter;
+import com.example.ucboyutlucanavar.ImportantStuff.Category.Category;
 import com.example.ucboyutlucanavar.ImportantStuff.ManagerAll;
-import com.example.ucboyutlucanavar.ImportantStuff.Models;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,7 +19,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<Models> respondeList;
+    List<Category> respondeList2;
     ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView ( R.layout.activity_main );
 
 
-     istek ();
+
+        istek2 ();
         tanimla ();
 
 
@@ -52,22 +42,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public  void istek()
-    {
-        final Call<List<Models>> modelList = ManagerAll.getInstance().getData();
-        modelList.enqueue ( new Callback<List<Models>> () {
-            @Override
-            public void onResponse(Call<List<Models>> call, Response<List<Models>> response) {
-                respondeList = response.body ();
-                ModelAdapter modelAdapter = new ModelAdapter (respondeList,getApplicationContext () );
 
-                listView.setAdapter ( modelAdapter );
+
+    public  void istek2()
+    {
+        final Call<List<Category>> categoryList = ManagerAll.getInstance2().getData2();
+        categoryList.enqueue ( new Callback<List<Category>> () {
+            @Override
+            public void onResponse(Call<List<Category>> call2, Response<List<Category>> response2) {
+                respondeList2 = response2.body ();
+                CategoryAdapter categoryAdapter = new CategoryAdapter (respondeList2,getApplicationContext () );
+
+                listView.setAdapter ( categoryAdapter );
 
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener () {
                     public void onItemClick(AdapterView<?> parent, View view,
                                             int position, long id) {
-                        Intent intent = new Intent(getApplicationContext (), DetailActivity.class);
-                        intent.putExtra ("selected project",respondeList.get ( position ));
+                        Intent intent = new Intent(getApplicationContext (),CategoryDetailActivity.class );
                         startActivity(intent);
 
                     }
@@ -76,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Models>> call, Throwable t) {
-                    String str = "";
-                    str = "";
+            public void onFailure(Call<List<Category>> call, Throwable t) {
+                String str = "";
+                str = "";
             }
         } );
     }
