@@ -9,16 +9,16 @@
 
     <TextView
         android:id="@+id/deger2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:alpha="0.8"
-        android:background="#59000000"
+        android:alpha="1"
+        android:background="#4B000000"
         android:includeFontPadding="true"
         android:paddingTop="12dp"
         android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#C6FFFFFF"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorAccentDark"
         android:textSize="36sp" />
 
 </LinearLayout>

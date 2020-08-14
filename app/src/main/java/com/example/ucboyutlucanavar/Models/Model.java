@@ -1,13 +1,12 @@
-package com.example.ucboyutlucanavar.ImportantStuff;
+package com.example.ucboyutlucanavar.Models;
 
 import java.io.Serializable;
 
-public class Models implements Serializable {
+public class Model implements Serializable {
     private int productId;
     private int sizeId;
     private String productName;
     private String productCatagory;
-
     private String productCatagoryPic;
     private Integer productSize;
     private Integer productPrice;
@@ -21,7 +20,7 @@ public class Models implements Serializable {
     private String picture8;
     private String picture9;
 
-    public Models(int productId, int sizeId, String productName, String productCatagory,String productCatagoryPic, Integer productSize, Integer productPrice, String tumbnail, String picture2, String picture3, String picture4, String picture5, String picture6, String picture7, String picture8, String picture9) {
+    public Model(int productId, int sizeId, String productName, String productCatagory, String productCatagoryPic, Integer productSize, Integer productPrice, String tumbnail, String picture2, String picture3, String picture4, String picture5, String picture6, String picture7, String picture8, String picture9) {
         this.productId = productId;
         this.sizeId = sizeId;
         this.productName = productName;
@@ -172,7 +171,7 @@ public class Models implements Serializable {
     private String catagory;
     private int price;
 
-    public Models(String name, String catagory, int price) {
+    public Model(String name, String catagory, int price) {
         this.name = name;
         this.catagory = catagory;
         this.price = price;

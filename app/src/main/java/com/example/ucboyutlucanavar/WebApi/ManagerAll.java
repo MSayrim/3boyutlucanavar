@@ -1,6 +1,7 @@
-package com.example.ucboyutlucanavar.ImportantStuff;
+package com.example.ucboyutlucanavar.WebApi;
 
-import com.example.ucboyutlucanavar.ImportantStuff.Category.Category;
+import com.example.ucboyutlucanavar.Models.Category;
+import com.example.ucboyutlucanavar.Models.Model;
 
 import java.util.List;
 
@@ -21,9 +22,9 @@ public class ManagerAll extends BaseManager {
         return ourInstance2;
     }
 
-    public Call<List<Models>> getData()
+    public Call<List<Model>> getData()
     {
-        Call<List<Models>> call = getRestApiClient().modelGetir ();
+        Call<List<Model>> call = getRestApiClient().modelGetir ();
         return call;
     }
     public Call<List<Category>> getData2()

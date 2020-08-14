@@ -1,4 +1,4 @@
-package com.example.ucboyutlucanavar.ImportantStuff;
+package com.example.ucboyutlucanavar.WebApi;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

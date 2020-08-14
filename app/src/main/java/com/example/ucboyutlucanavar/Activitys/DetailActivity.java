@@ -1,4 +1,4 @@
-package com.example.ucboyutlucanavar;
+package com.example.ucboyutlucanavar.Activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +7,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.ucboyutlucanavar.ImportantStuff.Adapter.ImageAdapter;
-import com.example.ucboyutlucanavar.ImportantStuff.Adapter.Picture;
-import com.example.ucboyutlucanavar.ImportantStuff.Models;
+import com.example.ucboyutlucanavar.Adapter.ImageAdapter;
+import com.example.ucboyutlucanavar.Adapter.Picture;
+import com.example.ucboyutlucanavar.Models.Model;
+import com.example.ucboyutlucanavar.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,8 @@ import java.util.List;
 public class DetailActivity extends AppCompatActivity {
 
     List<Picture> pics;
-    List<Models> respondeList;
+    List<Model> respondeList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,10 @@ public class DetailActivity extends AppCompatActivity {
 
         Intent intent = new Intent (  );
         Bundle content = getIntent ().getExtras ();
-        Models thatModel = (Models)content.getSerializable ( "selected project" );
+        Model thatModel = (Model)content.getSerializable ( "selected project" );
+
+
+
         TextView name = (TextView) findViewById ( R.id.modelNameDetail );
         TextView catagory = (TextView) findViewById ( R.id.modelCatagoryDetail );
         TextView size = (TextView) findViewById ( R.id.modelSizeDetail );

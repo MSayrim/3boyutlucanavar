@@ -1,4 +1,4 @@
-package com.example.ucboyutlucanavar.ImportantStuff;
+package com.example.ucboyutlucanavar.WebApi;
 
 import java.util.concurrent.TimeUnit;
 

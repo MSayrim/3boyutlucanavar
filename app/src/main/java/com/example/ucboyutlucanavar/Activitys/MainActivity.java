@@ -1,4 +1,4 @@
-package com.example.ucboyutlucanavar;
+package com.example.ucboyutlucanavar.Activitys;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.ucboyutlucanavar.ImportantStuff.Adapter.CategoryAdapter;
-import com.example.ucboyutlucanavar.ImportantStuff.Category.Category;
-import com.example.ucboyutlucanavar.ImportantStuff.ManagerAll;
+import com.example.ucboyutlucanavar.Adapter.CategoryAdapter;
+import com.example.ucboyutlucanavar.Models.Category;
+import com.example.ucboyutlucanavar.WebApi.ManagerAll;
+import com.example.ucboyutlucanavar.R;
 
 import java.util.List;
 
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         tanimla ();
 
 
-
     }
 
 
@@ -49,16 +49,22 @@ public class MainActivity extends AppCompatActivity {
         final Call<List<Category>> categoryList = ManagerAll.getInstance2().getData2();
         categoryList.enqueue ( new Callback<List<Category>> () {
             @Override
-            public void onResponse(Call<List<Category>> call2, Response<List<Category>> response2) {
+            public void onResponse(Call<List<Category>> call2, final Response<List<Category>> response2) {
                 respondeList2 = response2.body ();
-                CategoryAdapter categoryAdapter = new CategoryAdapter (respondeList2,getApplicationContext () );
+
+                final CategoryAdapter categoryAdapter= new CategoryAdapter (respondeList2,getApplicationContext () );
 
                 listView.setAdapter ( categoryAdapter );
+
+
 
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener () {
                     public void onItemClick(AdapterView<?> parent, View view,
                                             int position, long id) {
                         Intent intent = new Intent(getApplicationContext (),CategoryDetailActivity.class );
+
+
+
                         startActivity(intent);
 
                     }

@@ -1,4 +1,4 @@
-package com.example.ucboyutlucanavar.ImportantStuff.Adapter;
+package com.example.ucboyutlucanavar.Adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.ucboyutlucanavar.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

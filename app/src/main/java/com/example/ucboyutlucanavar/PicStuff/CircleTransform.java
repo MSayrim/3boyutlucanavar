@@ -1,4 +1,4 @@
-package com.example.ucboyutlucanavar.ImportantStuff.PicStuff;
+package com.example.ucboyutlucanavar.PicStuff;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

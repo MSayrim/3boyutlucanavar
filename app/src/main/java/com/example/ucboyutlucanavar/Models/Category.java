@@ -1,6 +1,8 @@
-package com.example.ucboyutlucanavar.ImportantStuff.Category;
+package com.example.ucboyutlucanavar.Models;
 
-public class Category {
+import java.io.Serializable;
+
+public class Category implements Serializable {
     private String categoryId;
     private String categoryName;
     private String categoryPic;

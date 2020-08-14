@@ -1,4 +1,4 @@
-package com.example.ucboyutlucanavar.ImportantStuff.Adapter;
+package com.example.ucboyutlucanavar.Adapter;
 
 import java.io.Serializable;
 
